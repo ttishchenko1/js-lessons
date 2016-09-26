@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Lesson 36. jQuery</title> 
+	</head>
+	<body>	
+	   	<script type="text/javascript">
+
+			// 1
+			$('#me').blue();
+
+			// 2
+			$('.wants-to-be-blue').blue();
+
+			// 3
+			$('li:nth-child(4)').blue();
+
+			// 4
+			$('#make-me-blue').blue();
+			$('#make-me-blue').next().next().blue();
+			$('p>span').first().blue();
+			$('span>i').last().blue();
+			$('div > div').blue();
+
+			// 5
+			for(var i=0; i<=$('div').length; i++) {
+			    $('div').each( function() {
+			        if($(this).text() == i) {
+			            $(this).blue();
+			        }   
+			    })
+			}
+
+			// 6
+			for(var i=0; i<=$('div').length; i++) {
+			    $('div').each( function() {
+			        if($(this).text() == i && $(this).attr('class')!= 'bomb') {
+			            $(this).blue();
+			        }   
+			    })
+			}
+
+			// 7
+			setTimeout(function(){
+			    $('div').blue();
+			}, 1001);
+
+			// 8
+			var div = $('div'),
+			    button = $('button');
+
+			setTimeout(function(){
+			    button.click();
+			    div.blue();  
+			}, 10);
+
+			// 9
+			$('#map').text().split(' ').forEach(function(id){
+			    $('#' + id).blue();
+			});
+
+			// 10
+			setTimeout(function(){
+			    $('div').blue();
+			}, 100);
+
+	   	</script>
+	</body>
+
+</html>
