@@ -1,0 +1,26 @@
+ul {
+	background: #A64DFF;
+	box-shadow: 0 0 3px #9FA1A0;
+}
+ul li {
+	display: inline-block;
+}
+ul li a {	
+	color: #fff;
+	padding: 10px 20px;
+	font-family: 'Oswald', sans-serif;
+	font-size: 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+	display: inline-block;
+}
+ul li a:hover,
+ul li a:focus {
+	background: #EEEEEE;
+	color: #9FA1A0;
+	-webkit-transition: all 200ms ease-out 0s;
+	-moz-transition: all 200ms ease-out 0s;
+	-ms-transition: all 200ms ease-out 0s;
+	-o-transition: all 200ms ease-out 0s;
+	transition: all 200ms ease-out 0s;
+}

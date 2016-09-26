@@ -1,0 +1,49 @@
+h1 {
+	color: #FFA600;
+	text-align: right;
+}
+p:first-letter {
+	color: #FF2A00;
+	font-size: 200%;
+}
+p em {
+	background: #008100;
+	color: #fff;
+}
+#allotment h2 {
+	color: #FFA600;
+}
+ul li {
+	font-weight: bold;
+}
+ol li {
+	font-weight: normal;
+}
+.fruits-list li {
+	color: #808080;
+}
+.vegetables-list li {
+	color: #FF0000;
+ }
+h2 {
+	font-weight: bold;
+}
+#warehouse h2 {
+	color: #0000FF;
+}
+#warehouse .fruits-list li {
+	color: #008100;
+}
+.students-table thead td {
+	font-weight: bold;
+	text-align: center;
+}
+.students-table tbody  td:first-child  {
+	color: #FFA600;
+	border-color: #000000;
+}
+.students-table tbody  td:not(:first-child ){
+	background: #008100;
+	color: #fff;
+	text-align: center;
+}
