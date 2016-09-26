@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 32. Java Script. Img, canvas, video</title> 
+    <style type="text/css">
+    	#chessBoard {    		
+    		border: 1px solid #000000;
+    	}
+    </style> 
+</head>
+<body>	
+
+	<canvas id="chessBoard" width="400" height="400">Сanvas не поддерживается браузером</canvas>	
+
+	<script type="text/javascript">
+
+    	var blockChessBoard = chessBoard.getContext("2d"),
+    		cellSize		= 50;
+
+    	for (var x=0; x<8; x++) {
+    		for (var y=0; y<8; y++) {
+
+    			blockChessBoard.fillStyle = (x+y)%2 === 0 ? "#fff" : "#000"; 
+    			blockChessBoard.fillRect(x*cellSize, y*cellSize, cellSize, cellSize);
+                
+    		}
+    	}
+
+    </script>
+    
+</body>
