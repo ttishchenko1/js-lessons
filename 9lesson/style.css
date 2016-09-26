@@ -1,0 +1,154 @@
+body {
+    font-size: 16px;
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+    /*для всей страницы добавьте внутреннюю тень цветa #333 и сделайте так чтобы body видело высоту внутренних плавающих элементов*/
+    box-shadow: inset 0 0 20px #333;
+}
+nav {
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    top: 0;
+    background: #333;
+    display: none;
+}
+nav ul {
+    margin: 0;
+}
+nav ul li {
+    float: left;
+    margin-right: 20px;
+    list-style-type: none;
+}
+nav li a {
+    display: inline-block;
+    padding: 9px 8px;
+    color: #fff;
+    transition: linear 0.5s all;
+}
+nav li a:hover {
+    background: #ccc;
+    color: #333;
+    transform: rotate(360deg);
+}
+.wrapperForBlocks {
+    margin-top: 50px;
+}
+.block {
+    text-align: center;
+    width: 200px;
+    padding: 0 10px 20px;
+    float: left;
+    border-radius: 3px;
+    background: #333;    
+    color: #fff;
+    margin: 10px;
+    box-shadow: 0 0 10px #979797;/*добавьте для блоков .block внешнюю тень с размытием 10px светло серого цвета*/
+    box-sizing: border-box; /*внутренние отступы не влияли на ширину этих блоков*/
+}
+.block h3 {
+    margin: 0 -10px -10px;
+    padding: 5px;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 2px 2px #ccc;
+    color: #000;
+    border: 1px solid #333;
+    /*background: #ffdc8b;*/
+    /*на фон заголовка добавьте градиент с левого верхнего угла в правый нижний цвета*/
+    background: -moz-linear-gradient(-45deg, #E0C82E, #F1E9D7);
+    background: -webkit-linear-gradient(-45deg, #E0C82E, #F1E9D7);
+    background: -o-linear-gradient(-45deg, #E0C82E, #F1E9D7);
+    background: -ms-linear-gradient(-45deg, #E0C82E, #F1E9D7);
+    background: linear-gradient(-45deg, #E0C82E, #F1E9D7);
+    /*ограничте высоту h3 в документе той высотой которая у него есть и сделайте так чтобы как в случаэ с 1 блоком
+    текст не переносился на другую строку а чтобы он заканчивался тремя точками*/
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+.block a {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #fff;
+}
+/*красивый ховер на кнопку чтобы менялся цвет с анимацией*/
+.block a:hover {
+    background: #fff;
+    color: #333;
+    transition: all 0.2s ease 0s;
+    -webkit-transition: all 0.2s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -ms-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+}
+.clearfix::after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    margin: 0;
+    visibility: hidden;
+}
+.anchor-block {
+    text-align: center;
+    padding: 20px;
+}
+.anchor {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #fff;
+    color: #333;
+    padding: 5px 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.anchor:hover {
+    background: #333;
+    color: #fff;
+    transition: all 0.2s ease 0s;
+    -webkit-transition: all 0.2s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -ms-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+}
+/*расположение блоков менялось в зависимости от экрана (но чтобы их размеры не менялись):*/
+@media only screen and (min-width:320px) and (max-width:1366px) {
+    .wrapperForBlocks {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .block {
+        display: inline-block;
+        float: none;
+    }
+}
+@media only screen and (min-width:320px) and (max-width:500px) {
+    .block {
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+    }
+}
+@media only screen and (min-width:500px) and (max-width:760px) {
+    .wrapperForBlocks {
+        max-width: 500px;
+    }
+}
+@media only screen and (min-width:760px) and (max-width:1366px) {
+    .wrapperForBlocks {
+        max-width: 800px;
+    }
+@media only screen and (min-width:1024px) and (max-width:1366px) {
+    .wrapperForBlocks {
+        max-width: 900px;
+    }
+}
+@media only screen and (min-width:1024px) {
+    nav {
+        display: block;
+    }
+}
