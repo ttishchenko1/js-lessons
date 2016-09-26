@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Lesson 30. Java Script. Forms, http</title> 
+        <link rel="stylesheet" href="bootstrap.min.css"/>
+        <style>
+            body {
+                margin: 20px;
+            }
+            input, textarea {
+                margin-bottom: 5px;
+            }
+            input[type="radio"] {
+                 margin-bottom: 40px;
+            }
+            input + div,
+            textarea + div {
+                color: red;
+                margin-bottom: 20px;
+                visibility: hidden;
+            }
+            input:focus + div,
+            textarea:focus + div {
+                visibility: visible;
+            }
+            button {
+                margin: 30px 0;
+            }
+        </style>
+    </head>
+    <body>
+
+        <form name="myForm"  action="" method="get">
+            <input type="text" class="form-control" required placeholder="First name*" name="first_name" title="Enter First name*"/>
+            <div>Enter First name</div>
+
+            <input type="text" class="form-control" placeholder="Last name" name="second_name" title="Enter Last name"/>
+            <div>Enter Last name</div>
+
+            <input type="text" class="form-control" pattern="^\+380\d{2}\d{3}\d{2}\d{2}$" placeholder="Telephone" name="phone" title="Enter phone"/>
+            <div>Enter phone</div>
+
+            <input type="radio" value="female" id="female" name="gender"/>
+            <label for="female">Female</label>
+
+            <input type="radio" value="male" id="male" name="gender"/>
+            <label for="male">Male</label>
+            
+
+            <textarea name="message" class="form-control" id="message" maxlength="30" title="Enter message">Please enter a message</textarea>
+            <div>Enter message</div>
+
+            <select class="form-control" name="city" id="">
+                <option value="Kiev">Kiev</option>
+                <option value="Vinniza">Vinniza</option>
+            </select>
+
+            <button class="btn btn-success">Submit</button>
+        </form>
+
+        <script>
+            function getFormData(event) {
+
+                var formData = {};
+
+                for(var i=0; i<myForm.length-1; i++) {
+
+                    if (myForm.elements[i].type != 'radio' ) {
+
+                        formData[myForm.elements[i].name] = myForm.elements[i].value;
+
+                    } else if (myForm.elements[i].type == 'radio' && myForm.elements[i].checked) { 
+
+                        formData[myForm.elements[i].name] = myForm.elements[i].value;
+
+                    }
+
+                }
+
+                console.log(formData);
+
+                event.preventDefault();
+                return false;
+            }
+
+            myForm.addEventListener('submit', getFormData);
+        </script>
+
+
+    </body>
+</html>
